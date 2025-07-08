@@ -1,0 +1,50 @@
+.custom {
+  text-transform: uppercase;
+  font-size: var(--fontSizeXS);
+  color: rgb(0, 0, 0);
+  background-color: var(--predefined);
+  border-top-left-radius: 8rem 8rem;
+  border-top-right-radius: 8rem 8rem;
+  border-bottom-left-radius: 8rem 8rem;
+  border-bottom-right-radius: 8rem 8rem;
+  padding-top: 4rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 4rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ALPHA {
+  --predefined: oklch(75% 0.12 255);
+}
+
+.RC {
+  --predefined: oklch(75% 0.18 135);
+}
+
+.EXP {
+  --predefined: oklch(75% 0.2 285);
+}
+
+.BROKEN {
+  --predefined: oklch(70% 0.2 30);
+}
+
+.BETA {
+  --predefined: rgba(255, 196, 0, 1);
+}/*# sourceMappingURL=custom-pill.module.css.map */
