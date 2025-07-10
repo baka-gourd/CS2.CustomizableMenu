@@ -62,8 +62,24 @@ const CustomMenuItemContent = memo<{
             data?.beta ||
             data?.warning ||
             data?.badge,
-        [props.beta, props.warning, data?.badge]
+        [props.beta, props.warning, data?.badge, data?.warning, data?.beta]
     );
+
+    const shouldShowBeta = useMemo(() => {
+        if (data?.beta === undefined) {
+            return props.beta;
+        }
+
+        return data.beta;
+    }, [props.beta, data?.beta]);
+
+    const shouldShowWarning = useMemo(() => {
+        if (data?.warning === undefined) {
+            return props.warning;
+        }
+
+        return data.warning;
+    }, [props.warning, data?.warning]);
 
     const itemKey = useMemo(() => {
         switch (props.item.id) {
@@ -98,7 +114,7 @@ const CustomMenuItemContent = memo<{
             {shouldShowRight && (
                 <div
                     className={`${menuItemClasses.menuItemRight} ${itemRight}`}>
-                    {(props.beta || data?.beta) && (
+                    {shouldShowBeta && (
                         <CustomPill type="BETA">
                             {translate("Menu.BETA_LABEL")}
                         </CustomPill>
@@ -115,7 +131,7 @@ const CustomMenuItemContent = memo<{
                                 </CustomPill>
                             );
                         })}
-                    {(props.warning || data?.warning) && (
+                    {shouldShowWarning && (
                         <img
                             src="Media/Misc/Warning.svg"
                             alt="warning"
@@ -154,7 +170,8 @@ const createMemoizedComponent = (Component: any) => {
         );
 
         const modifiedProps = useMemo(() => {
-            if (data?.item?.builtIn) props.item.builtIn = true;
+            if (data?.item?.builtIn !== undefined)
+                props.item.builtIn = data.item.builtIn;
             return props;
         }, [props, data]);
 

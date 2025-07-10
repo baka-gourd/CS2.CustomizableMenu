@@ -3,5 +3,10 @@
         "item": {
             "builtIn": true
         }
+    },
+    "AssetPacksManager.AssetPacksManager.Mod": {
+        "item": {
+            "builtIn": true
+        }
     }
 }
