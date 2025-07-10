@@ -12,7 +12,6 @@ export const CustomPill = (props: {
         return (
             <div className={`${style[props.type]} ${style.custom}`}>
                 {props.children}
-                <div className={style.overlay} />
             </div>
         );
     }
@@ -20,7 +19,6 @@ export const CustomPill = (props: {
     return (
         <div>
             <img src={props.src} alt="badge" style={props.customStyle} />
-            <div className={style.overlay} />
         </div>
     );
 };
