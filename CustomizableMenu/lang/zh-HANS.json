@@ -1,3 +1,13 @@
 {
-  "CustomizableMenu.ALPHA": "ALPHA"
+  "Options.SECTION[CustomizableMenu.CustomizableMenu.CustomizableMenu]": "自定义菜单",
+  "CustomizableMenu.ALPHA": "ALPHA",
+  "CustomizableMenu.RC": "RC",
+  "CustomizableMenu.EXP": "EXP",
+  "CustomizableMenu.BROKEN": "损坏",
+  "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Enabled]": "启用",
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Enabled]": "启用自定义菜单",
+  "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ProtectVanillaMenu]": "保护原版菜单",
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ProtectVanillaMenu]": "启用后，原版菜单将不可变",
+  "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ActivateEmbedRules]": "启用内置规则",
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ActivateEmbedRules]": "启用内置规则"
 }

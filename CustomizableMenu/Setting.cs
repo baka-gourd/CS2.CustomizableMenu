@@ -49,8 +49,11 @@ namespace CustomizableMenu
                 {"CustomizableMenu.EXP", "EXP"},
                 {"CustomizableMenu.BROKEN", "BROKEN"},
                 {_setting.GetOptionLabelLocaleID(nameof(_setting.Enabled)), "Enabled"},
+                {_setting.GetOptionDescLocaleID(nameof(_setting.Enabled)), "Enable Customizable Menu"},
                 {_setting.GetOptionLabelLocaleID(nameof(_setting.ProtectVanillaMenu)), "Protect Vanilla Menu"},
-                {_setting.GetOptionLabelLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate Embed Rules"}
+                {_setting.GetOptionDescLocaleID(nameof(_setting.ProtectVanillaMenu)), "When enabled, vanilla tabs will be immutable."},
+                {_setting.GetOptionLabelLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate Embed Rules"},
+                {_setting.GetOptionDescLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate the Embed Rules"}
             };
         }
 
