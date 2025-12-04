@@ -1,3 +1,3 @@
-# 1.0.1
+# 1.1.1
 
-- Support game 1.3.6
+- add OBS

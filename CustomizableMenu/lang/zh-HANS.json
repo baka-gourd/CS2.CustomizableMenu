@@ -4,10 +4,15 @@
   "CustomizableMenu.RC": "RC",
   "CustomizableMenu.EXP": "EXP",
   "CustomizableMenu.BROKEN": "损坏",
+  "CustomizableMenu.OBS": "过时",
   "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Enabled]": "启用",
   "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Enabled]": "启用自定义菜单",
   "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ProtectVanillaMenu]": "保护原版菜单",
   "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ProtectVanillaMenu]": "启用后，原版菜单将不可变",
   "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ActivateEmbedRules]": "启用内置规则",
-  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ActivateEmbedRules]": "启用内置规则"
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.ActivateEmbedRules]": "启用内置规则",
+  "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.UpdateSource]": "更新源",
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.UpdateSource]": "从此源下载更新",
+  "Options.OPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Update]": "更新",
+  "Options.OPTION_DESCRIPTION[CustomizableMenu.CustomizableMenu.CustomizableMenu.Setting.Update]": "强制更新，需要重启"
 }

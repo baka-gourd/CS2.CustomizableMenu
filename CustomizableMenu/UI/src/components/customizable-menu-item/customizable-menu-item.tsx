@@ -34,6 +34,7 @@ const isCustomized = (src?: string) => {
         case "RC":
         case "EXP":
         case "BROKEN":
+        case "OBS":
         case "BETA":
             return false;
         default:

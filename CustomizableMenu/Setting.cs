@@ -1,10 +1,12 @@
 using Colossal;
 using Colossal.IO.AssetDatabase;
 using Colossal.IO.AssetDatabase.Internal;
+
 using Game.Modding;
 using Game.Settings;
 using Game.UI;
 using Game.UI.Widgets;
+
 using System.Collections.Generic;
 
 namespace CustomizableMenu
@@ -20,12 +22,20 @@ namespace CustomizableMenu
         public bool Enabled { get; set; }
         public bool ProtectVanillaMenu { get; set; }
         public bool ActivateEmbedRules { get; set; }
+        [SettingsUITextInput] public string UpdateSource { get; set; }
+
+        [SettingsUIButton]
+        public bool Update
+        {
+            set => _ = CustomizableMenu.InitializeData(true);
+        }
 
         public sealed override void SetDefaults()
         {
             Enabled = true;
             ProtectVanillaMenu = false;
             ActivateEmbedRules = true;
+            UpdateSource = "https://cities2.nptr.cc/CustomizableMenuData.json";
         }
     }
 
@@ -48,12 +58,20 @@ namespace CustomizableMenu
                 {"CustomizableMenu.RC", "RC"},
                 {"CustomizableMenu.EXP", "EXP"},
                 {"CustomizableMenu.BROKEN", "BROKEN"},
+                {"CustomizableMenu.OBS", "OBS"},
                 {_setting.GetOptionLabelLocaleID(nameof(_setting.Enabled)), "Enabled"},
                 {_setting.GetOptionDescLocaleID(nameof(_setting.Enabled)), "Enable Customizable Menu"},
                 {_setting.GetOptionLabelLocaleID(nameof(_setting.ProtectVanillaMenu)), "Protect Vanilla Menu"},
-                {_setting.GetOptionDescLocaleID(nameof(_setting.ProtectVanillaMenu)), "When enabled, vanilla tabs will be immutable."},
+                {
+                    _setting.GetOptionDescLocaleID(nameof(_setting.ProtectVanillaMenu)),
+                    "When enabled, vanilla tabs will be immutable."
+                },
                 {_setting.GetOptionLabelLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate Embed Rules"},
-                {_setting.GetOptionDescLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate the Embed Rules"}
+                {_setting.GetOptionDescLocaleID(nameof(_setting.ActivateEmbedRules)), "Activate the Embed Rules"},
+                {_setting.GetOptionLabelLocaleID(nameof(_setting.UpdateSource)), "Update source"},
+                {_setting.GetOptionDescLocaleID(nameof(_setting.UpdateSource)), "Mod will fetch custom data form this source"},
+                {_setting.GetOptionLabelLocaleID(nameof(_setting.Update)), "Update"},
+                {_setting.GetOptionDescLocaleID(nameof(_setting.Update)), "Update online source now, require restart"}
             };
         }
 

@@ -47,4 +47,9 @@
 
 .BETA {
   --predefined: rgba(255, 196, 0, 1);
-}/*# sourceMappingURL=custom-pill.module.css.map */
+}
+
+.OBS {
+  --predefined: oklch(70% 0.2 30);
+}
+/*# sourceMappingURL=custom-pill.module.css.map */

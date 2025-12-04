@@ -1,4 +1,5 @@
 using Colossal.UI.Binding;
+
 using Game.UI;
 
 namespace CustomizableMenu
@@ -9,11 +10,14 @@ namespace CustomizableMenu
         {
             base.OnCreate();
 
-            AddUpdateBinding(new GetterValueBinding<bool>(CustomizableMenu.Id, "enabled", () => CustomizableMenu.Setting.Enabled));
+            AddUpdateBinding(new GetterValueBinding<bool>(CustomizableMenu.Id, "enabled",
+                () => CustomizableMenu.Setting!.Enabled));
             AddUpdateBinding(new GetterValueBinding<bool>(CustomizableMenu.Id, "activateEmbedRules",
-                () => CustomizableMenu.Setting.ActivateEmbedRules));
+                () => CustomizableMenu.Setting!.ActivateEmbedRules));
             AddUpdateBinding(new GetterValueBinding<bool>(CustomizableMenu.Id, "protectVanillaMenu",
-                () => CustomizableMenu.Setting.ProtectVanillaMenu));
+                () => CustomizableMenu.Setting!.ProtectVanillaMenu));
+            AddUpdateBinding(new GetterValueBinding<string>(CustomizableMenu.Id, "customData",
+                () => CustomizableMenu.Data));
         }
     }
 }

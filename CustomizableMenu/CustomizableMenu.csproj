@@ -8,12 +8,14 @@
 
   <PropertyGroup>
     <BuildCounterFile>$(MSBuildProjectDirectory)\build.counter</BuildCounterFile>
-    <BaseVersion>1.0.1</BaseVersion>
+    <BaseVersion>1.1.0</BaseVersion>
   </PropertyGroup>
 
   <!--Imports must be after PropertyGroup block-->
-  <Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
-  <Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+  <Import
+    Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
+  <Import
+    Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
 
   <ItemGroup>
     <Reference Include="Game">
@@ -28,6 +30,9 @@
     <Reference Include="Colossal.IO.AssetDatabase">
       <Private>false</Private>
     </Reference>
+    <Reference Include="Colossal.PSI.Common">
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Colossal.UI">
       <Private>false</Private>
     </Reference>
@@ -35,6 +40,9 @@
       <Private>false</Private>
     </Reference>
     <Reference Include="Colossal.Localization">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
       <Private>false</Private>
     </Reference>
     <Reference Include="Unity.InputSystem">
@@ -67,6 +75,9 @@
     <Reference Update="System.Data">
       <Private>false</Private>
     </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -76,12 +87,15 @@
 
   <Target Name="SetupAttributes" DependsOnTargets="IncrementBuildCount" BeforeTargets="Publish">
     <CallTarget Targets="IncrementBuildCount" />
-    <XmlPoke XmlInputPath="$(PublishConfigurationPath)" Value="$([System.IO.File]::ReadAllText($(ProjectDir)/Description.md))" Query="//LongDescription" />
-    <XmlPoke XmlInputPath="$(PublishConfigurationPath)" Value="$([System.IO.File]::ReadAllText($(ProjectDir)/ChangeLog.md))" Query="//ChangeLog" />
+    <XmlPoke XmlInputPath="$(PublishConfigurationPath)"
+             Value="$([System.IO.File]::ReadAllText($(ProjectDir)/Description.md))" Query="//LongDescription" />
+    <XmlPoke XmlInputPath="$(PublishConfigurationPath)"
+             Value="$([System.IO.File]::ReadAllText($(ProjectDir)/ChangeLog.md))" Query="//ChangeLog" />
     <XmlPoke XmlInputPath="$(PublishConfigurationPath)" Value="$(InformationalVersion)" Query="//ModVersion/@Value" />
   </Target>
 
-  <Target Name="LoadBuildCount" BeforeTargets="GetAssemblyVersion;GetAssemblyAttributes" Condition="'$(Building)' != 'true'">
+  <Target Name="LoadBuildCount" BeforeTargets="GetAssemblyVersion;GetAssemblyAttributes"
+          Condition="'$(Building)' != 'true'">
     <!-- Read file -->
     <ReadLinesFromFile File="$(BuildCounterFile)" ContinueOnError="true">
       <Output TaskParameter="Lines" ItemName="CounterLines" />
@@ -175,6 +189,7 @@
     <Content Include="lang\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <Target Name="BuildUI" AfterTargets="AfterBuild">
