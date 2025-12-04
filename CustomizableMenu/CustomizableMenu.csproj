@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <BuildCounterFile>$(MSBuildProjectDirectory)\build.counter</BuildCounterFile>
-    <BaseVersion>1.1.0</BaseVersion>
+    <BaseVersion>1.1.1</BaseVersion>
   </PropertyGroup>
 
   <!--Imports must be after PropertyGroup block-->
